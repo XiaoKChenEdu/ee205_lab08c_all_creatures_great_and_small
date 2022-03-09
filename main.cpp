@@ -12,7 +12,14 @@
 
 #include <iostream>
 
+#include "animal.h"
+
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    animal myFirstAnimal = animal( "Felis catus" );
+    myFirstAnimal.setGender( MALE );
+    myFirstAnimal.setWeight( 19 ); // @todo Refactor to include Unit of Measure
+    myFirstAnimal.printInfo();
+
     return 0;
 }
