@@ -23,11 +23,11 @@ class animal {
 public:
     animal(const std::string &newSpecies);
 
-    animal(const std::string &species, Gender gender);
+    animal(const std::string &newSpecies, Gender gender);
 
-    animal(const std::string &species, float weight);
+    animal(const std::string &newSpecies, float newWeight);
 
-    animal(const std::string &species, Gender gender, float weight);
+    animal(const std::string &newSpecies, Gender gender, float newWeight);
 
     static const std::string &getKingdom();
 
@@ -35,11 +35,11 @@ public:
 
     Gender getGender() const;
 
-    void setGender(Gender gender);
+    void setGender(Gender newGender);
 
     float getWeight() const;
 
-    void setWeight(float weight);
+    void setWeight(float newWeight);
 
     void printInfo();
 
@@ -50,5 +50,11 @@ protected:
     std::string species; // Required
     enum Gender gender = UNKNOWN_GENDER;
     float weight = UNKNOWN_WEIGHT;
+
+    bool validateWeight(const float newWeight);
+    bool validateSpecies(const std::string newSpecies);
+
+private:
+    void setSpecies(const std::string newSpecies);
 
 };
